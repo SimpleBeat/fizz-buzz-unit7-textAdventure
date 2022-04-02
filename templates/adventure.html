@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #434343;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        h1 {
+            color: #cee2f3;
+            font-size: 36px;
+        }
+
+        p, a {
+            color: #fce5cd;
+            font-size: 24px;
+            line-height: 150%;
+        }
+
+        a {
+            color: #e9d1dc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #cee2f3;
+        }
+
+        li {
+            list-style-type: none;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+        }
+
+        .theEnd {
+            color: rgb(245, 45, 45);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <p>{{ text }}</p>
+
+
+        {% if choices %}
+
+            <p>What do you want to do next:</p>
+
+            <ul>
+                {% for (page_name, choice) in choices %}
+                <li>
+                    <a href="{{url_for(page_name)}}">{{choice}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            
+            <p class="theEnd">THE END</p>
+
+
+            <p><a href="{{url_for('start')}}">Play again.</a></p>
+        {% endif %}
+
+
+    </div>
+</body>
+
+</html>
