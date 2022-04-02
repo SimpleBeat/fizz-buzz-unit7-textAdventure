@@ -33,6 +33,3 @@ def make_a_title():
         title += part4
     
     return title
-
-def random_choice():
-    return random.choice([0, 1])

@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from title_generator import make_a_title
-from title_generator import random_choice
 
 app = Flask(__name__)
 
